@@ -38,17 +38,25 @@ namespace Sandbox
             graph.AddEdge(4, 5);
             graph.AddEdge(3, 5);
             graph.AddEdge(0, 5);
+            Console.Write(graph.ToString());
 
-            BreadthFirstPaths bfp = new BreadthFirstPaths(graph, 0);
+            Graph graph2 = new Graph(graph);
+
+            Console.WriteLine("");
+            Console.Write(graph2.ToString());
+
+            //BreadthFirstPaths bfp = new BreadthFirstPaths(graph, 0);
             /*
             foreach (var i in bfp.PathTo(4))
             {
                 Console.WriteLine(i);
             }
             */
+            /*
             Console.WriteLine(bfp.DistanceTo(4));
             Console.WriteLine(bfp.DistanceTo(5));
             Console.WriteLine(bfp.DistanceTo(3));
+            */
 
             Console.ReadKey();
         }

@@ -19,7 +19,7 @@ namespace DataStructures.Graphs
         protected List<int>[] _adj;
 
         /// <summary>
-        /// Constructor to create a graph.
+        /// Constructor.
         /// </summary>
         /// <param name="v">Number of vertices</param>
         public Graph(int v)
@@ -31,6 +31,16 @@ namespace DataStructures.Graphs
             this._adj = new List<int>[v];
             for (int i = 0; i < this._adj.Length; i++)
                 this._adj[i] = new List<int>();
+        }
+
+        /// <summary>
+        /// Copy constructor.
+        /// </summary>
+        public Graph(Graph previousGraph)
+        {
+            this._V = previousGraph.V;
+            this._E = previousGraph.E;
+            this._adj = previousGraph._adj;
         }
 
         /// <summary>
@@ -87,7 +97,7 @@ namespace DataStructures.Graphs
         {
             return this._adj[v];
         }
-
+        
         /// <summary>
         /// Get a string representation of the graph's adjacency lists.
         /// </summary>
