@@ -33,13 +33,17 @@ namespace DataStructures.Graphs
                 this._adj[i] = new List<int>();
         }
 
-        // number of vertices
+        /// <summary>
+        /// Number of vertices.
+        /// </summary>
         public int V
         {
             get { return this._V; }
         }
 
-        // number of edges
+        /// <summary>
+        /// Number of edges.
+        /// </summary>
         public int E
         {
             get { return this._E; }
@@ -104,5 +108,5 @@ namespace DataStructures.Graphs
 
             return builder.ToString();
         }
-    }
+    }//class
 }
