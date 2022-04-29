@@ -697,4 +697,13 @@ An **edge-weighted graph** has a **weight** (**cost**) associated with each edge
 - airlines - flight routes have different distances and fares
 - electrical and communications circuits - different wires or paths have different resistances, times for signal transmission, and other properties.
 
+## Symbol graph
+As typical applications might involve textual data, a simple graph containing integer values might not be sufficient. We can define a **symbol graph** which contains string values at its nodes. Properties:
+- vertex names are strings
 
+Implementation:
+- symbol table of string keys and integer values/indices.
+- an array of keys that serves as an inverted index, giving the vertex name associated with each integer index
+- an underlying graph built using the indices to refer to vertices
+
+![symbol graph](img/symbol_graph.PNG)
