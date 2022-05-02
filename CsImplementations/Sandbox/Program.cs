@@ -19,27 +19,7 @@ namespace Sandbox
             st.Insert(1, "one");
             st.Insert(2, "two");
             st.Insert(3, "three");
-
-            Console.WriteLine("IsEmpty: " + st.IsEmpty());
-            Console.WriteLine("Size: " + st.Size());
-
-            Console.WriteLine(st.Get(1));
-            Console.WriteLine(st.Get(4));
-
-            st.Insert(4, "four");
-
-            Console.WriteLine(st.Get(4));
-
-            st.Delete(4);
-
-            Console.WriteLine(st.Get(4));
-
-            Console.WriteLine("Size: " + st.Size());
-
-            Console.WriteLine("");
-            Console.WriteLine("Ordered keys: ");
-            foreach (var k in st.Keys())
-                Console.WriteLine(k);
+            Console.WriteLine(st[2]);
 
             Console.ReadKey();
         }

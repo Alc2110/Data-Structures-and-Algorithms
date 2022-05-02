@@ -46,6 +46,16 @@ namespace DataStructures.SymbolTables
         }//Get
 
         /// <summary>
+        /// Finds the value associated with the key.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>Value associated with the key. Null if the key is not in the table.</returns>
+        public TValue this[TKey key]
+        {
+            get => Get(key);
+        }
+
+        /// <summary>
         /// Adds a new key-value pair.
         /// If the key already exists, updates the value.
         /// If the key does not exist, adds the new key-value pair.
