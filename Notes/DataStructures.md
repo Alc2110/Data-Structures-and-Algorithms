@@ -707,3 +707,37 @@ Implementation:
 - an underlying graph built using the indices to refer to vertices
 
 ![symbol graph](img/symbol_graph.PNG)
+
+# Symbol table
+http://math.oxford.emory.edu/site/cs171/symbolTables/
+- associates a **value** with a **key**
+- supports the following operations:
+1. insertion of a new key-value pair, or changing the value of an existing key to something new
+2. searching for a given key to find its associated value.
+
+- typical applications:
+1. dictionary (words and definitions)
+2. file share (file and computer ID on which it is stored)
+3. account management (account number and transaction details)
+4. web search (search keyword and relevant webpages)
+5. compiler (variable name and type and value)
+6. routing table (destination and best route for internet packets)
+7. DNS (domain name and IP address)
+8. filesystem (filename and location on disk)
+
+## Design considerations
+- generics - allow separate specification of types of keys and values.
+- duplicate keys - allow only one value to be associated with each key (no dupicate keys). When a new key-value pair is inserted into a table already containing the key and its associated value, the new value replaces the old value.
+- null keys - keys cannot be null.
+- null values - no key can be associated with a null value.
+- deletion - two strategies can be used:
+1. lazy deletion - key associated with null value. Later, all such keys can be removed.
+2. eager deletion - key is removed from the table.
+- iteration - client should be able to iterate over key-value pairs.
+- key equality - determing whether or not a key exists in the table is based on object equality.
+
+## Implementations
+These are possible implementations which are easy, but inefficient.
+- unordered linked list - each node stores a key, a value, and a reference to the next node. As the list is unordered, the entire list needs to be traversed to search for a given key, which is n comparisons in the worst case, and n/2 comparisons on average.
+- ordered array - ordering the list increases performance when searching for a key, to ln(n). However, insertions are still costly. In the case that new key-value pair needs to be inserted at the beginning of the array, all existing elements must be shifted to the right by one, which is n in the worst case, and n/2 on average.
+- binary search tree
