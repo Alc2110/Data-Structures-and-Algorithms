@@ -737,7 +737,12 @@ http://math.oxford.emory.edu/site/cs171/symbolTables/
 - key equality - determing whether or not a key exists in the table is based on object equality.
 
 ## Implementations
-These are possible implementations which are easy, but inefficient.
-- unordered linked list - each node stores a key, a value, and a reference to the next node. As the list is unordered, the entire list needs to be traversed to search for a given key, which is n comparisons in the worst case, and n/2 comparisons on average.
+These are possible implementations which are easy, but inefficient:
+- unordered linked list - each node stores a key, a value, and a reference to the next node. As the list is unordered, the entire list needs to be traversed to search for a given key, which is n comparisons in the worst case, and n/2 comparisons on average. Best for very small symbol tables.
 - ordered array - ordering the list increases performance when searching for a key, to ln(n). However, insertions are still costly. In the case that new key-value pair needs to be inserted at the beginning of the array, all existing elements must be shifted to the right by one, which is n in the worst case, and n/2 on average.
+
+These implementations are more efficient:
 - binary search tree
+- pair of ordered arrays for binary search - optimal search and space
+- red black tree - optimal search and insert
+- hash table - fast search and insert for common data types
