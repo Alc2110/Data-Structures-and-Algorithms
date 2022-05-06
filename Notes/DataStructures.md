@@ -727,7 +727,7 @@ http://math.oxford.emory.edu/site/cs171/symbolTables/
 
 ## Design considerations
 - generics - allow separate specification of types of keys and values.
-- duplicate keys - allow only one value to be associated with each key (no dupicate keys). When a new key-value pair is inserted into a table already containing the key and its associated value, the new value replaces the old value.
+- duplicate keys - allow only one value to be associated with each key (no duplicate keys). When a new key-value pair is inserted into a table already containing the key and its associated value, the new value replaces the old value.
 - null keys - keys cannot be null.
 - null values - no key can be associated with a null value.
 - deletion - two strategies can be used:
