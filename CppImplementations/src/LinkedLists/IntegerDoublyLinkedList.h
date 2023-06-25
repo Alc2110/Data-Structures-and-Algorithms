@@ -18,6 +18,22 @@ class IntegerDoublyLinkedList
     };
 
     public:
+        class Iterator
+        {
+            public:
+                Iterator(Node* node);
+                int& operator*();
+                Iterator& operator++();
+                Iterator operator++(int);
+                Iterator& operator--();
+                Iterator operator--(int);
+                bool operator==(const Iterator& other) const;
+                bool operator!=(const Iterator& other) const;
+                
+            private:
+                Node* _current_node;
+        };
+
         IntegerDoublyLinkedList();
         void push_back(int value);
         void insert(int value);
@@ -26,6 +42,8 @@ class IntegerDoublyLinkedList
         int count();
         bool contains(int value);
         int maximum();
+        Iterator begin();
+        Iterator end();
         ~IntegerDoublyLinkedList();
 
     private:

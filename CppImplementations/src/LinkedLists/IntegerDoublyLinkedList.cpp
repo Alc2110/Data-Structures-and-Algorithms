@@ -148,6 +148,16 @@ int IntegerDoublyLinkedList::maximum()
     }
 }
 
+IntegerDoublyLinkedList::Iterator IntegerDoublyLinkedList::begin()
+{
+    return IntegerDoublyLinkedList::Iterator(_first);
+}
+
+IntegerDoublyLinkedList::Iterator IntegerDoublyLinkedList::end()
+{
+    return IntegerDoublyLinkedList::Iterator(nullptr);
+}
+
 IntegerDoublyLinkedList::~IntegerDoublyLinkedList()
 {
     // free memory occupied by the list
@@ -159,4 +169,50 @@ IntegerDoublyLinkedList::~IntegerDoublyLinkedList()
 
         current_node = next_node;
     }
+}
+
+IntegerDoublyLinkedList::Iterator::Iterator(Node* node)
+{
+    _current_node = node;
+}
+
+int& IntegerDoublyLinkedList::Iterator::operator*()
+{
+    return _current_node->data;
+}
+
+IntegerDoublyLinkedList::Iterator IntegerDoublyLinkedList::Iterator::operator++(int)
+{
+    Iterator temp = *this;
+    ++(*this);
+    return temp;
+}
+
+IntegerDoublyLinkedList::Iterator& IntegerDoublyLinkedList::Iterator::operator++()
+{
+    _current_node = _current_node->next;
+    return *this;
+}
+
+IntegerDoublyLinkedList::Iterator& IntegerDoublyLinkedList::Iterator::operator--()
+{
+    _current_node = _current_node->previous;
+    return *this;
+}
+
+IntegerDoublyLinkedList::Iterator IntegerDoublyLinkedList::Iterator::operator--(int)
+{
+    Iterator temp = *this;
+    --(*this);
+    return temp;
+}
+
+bool IntegerDoublyLinkedList::Iterator::operator==(const Iterator& other) const
+{
+    return _current_node == other._current_node;
+}
+
+bool IntegerDoublyLinkedList::Iterator::operator!=(const Iterator& other) const 
+{
+    return !(*this == other);
 }

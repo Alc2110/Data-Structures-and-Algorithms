@@ -80,3 +80,40 @@ TEST(IntegerDoublyLinkedList_Tests, maximum_test)
     // assert
     EXPECT_EQ(actual_result, 3);
 }
+
+TEST(IntegerDoublyLinkedList_Tests, iterator_test)
+{
+    // arrange
+    IntegerDoublyLinkedList list;
+    list.push_back(2);
+    list.push_back(1);
+    list.push_back(3);
+
+    // act
+    int first_value;
+    int second_value;
+    int third_value;
+    int index = 0;
+    for (IntegerDoublyLinkedList::Iterator it = list.begin(); it != list.end(); it++)
+    {
+        if (index==0)
+        {
+            first_value=*it;
+        }
+        else if (index==1)
+        {
+            second_value=*it;
+        }
+        else if (index==2)
+        {
+            third_value=*it;
+        }
+
+        index++;
+    }
+
+    // assert
+    EXPECT_EQ(first_value, 2);
+    EXPECT_EQ(second_value, 1);
+    EXPECT_EQ(third_value, 3);
+}
