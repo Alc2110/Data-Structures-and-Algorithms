@@ -95,6 +95,13 @@ namespace DataStructures.Graphs
         /// <returns></returns>
         public List<int> GetAdjacency(int v)
         {
+            if (v < 0 || v > this._adj.Length)
+            {
+                throw new ArgumentOutOfRangeException($"Error, the value provided for 'v' should be" +
+                "between 0 and {this._adj.Length - 1}\n" +
+                "\tv = {v}\n");
+            }
+
             return this._adj[v];
         }
         

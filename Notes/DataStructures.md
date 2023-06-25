@@ -359,6 +359,18 @@ Time complexity:
 |Deletion |O(1)    |O(1)      |
 &nbsp;
 
+# Priority Queue
+Similar to a regular queue or stack, but each element has a priority associated with it. An element with higher priority is served before an element with low priority.
+
+Two important operations are supported:
+- insert
+- remove maximum
+
+The classic priority queue implementation is based on the binary heap data structure. This entails elements being stored in an array, subject to ordering constraints that allow for efficient implementations of the insert and remove maximum operations.
+
+## Index priority queue
+To allow referring to items already on the queue, we can associate a unique integer index with each element.
+
 # Deque
 A **deque** is a double-ended queue. It supports adding and removing items at both ends.
 

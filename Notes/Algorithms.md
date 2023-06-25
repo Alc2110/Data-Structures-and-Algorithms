@@ -282,4 +282,13 @@ Time complexity:
 &nbsp;
 
 # Tree and graph algorithms
+## Dijkstra's algorithm
+- Finds the shortest paths between nodes in a graph.
+- Invented by Edsger W. Dijkstra in 1956, and published three years later.
+- Many variations exist. The most common variant uses a "source" node and finds shortest paths from the source to all other nodes in the graph, producing a shortest-path-tree. Dijkstra's original algorithm found the shortest path between two given nodes.
+
+### Shortest-paths tree algorithm
+- Assume we have an edge-weighted digraph, with a designated source vertex S.
+- A **shortest-paths tree** exists for the vertex S, which is a subgraph of the given edge-weighted digraph.
+
 TODO
